@@ -1,40 +1,37 @@
-# Welcome to Remix!
+## The Course Project
 
-- 📖 [Remix docs](https://remix.run/docs)
+### Public and Private Pages
 
-## Development
+Public "marketing" pages & Private "app" pages
 
-Run the dev server:
+### Table:
 
-```shellscript
-npm run dev
-```
+| Public/Private | Route | Description |
+| --- | --- | --- |
+| Public | / | Home page |
+| Public | /pricing | Pricing info |
+| Public | /auth | User authentication |
+| Protected | /expenses | List of expenses |
+| Protected | /expenses/raw | Raw data of expenses |
+| Protected | /expenses/add | Add a new expense |
+| Protected | /expenses/edit/:id | Edit an expense |
+| Protected | /expenses/analysis | Analysis of expenses |
 
-## Deployment
 
-First, build your app for production:
+### Comencem!
 
-```sh
-npm run build
-```
+Per crear un nou projecte de Remix, utilitza la comanda `npx create-remix@latest`. Això, com sempre, et demanarà algunes qüestions com el nom de la carpeta de projecte, si ho necessites.
 
-Then run the app in production mode:
 
-```sh
-npm start
-```
+Per començar, intenta generar l'estructura d'arxius, preferiblement amb el format de nom d'arxiu (notació amb punts), ja que és la que he fet servir i l'opció "moderna" de Remix. 
 
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+app/
+├── routes/
+│   ├── _index.tsx                   // Ruta "/"
+│   ├── pricing.tsx                  // Ruta "/pricing"
+│   ├── auth.tsx                     // Ruta "/auth"
+│   ├── expenses._index.tsx          // Ruta "/expenses"
+│   ├── expenses.raw.tsx             // Ruta "/expenses/raw"
+│   ├── expenses.add.tsx             // Ruta "/expenses/add"
+│   ├── expenses.edit.$id.tsx        // Ruta "/expenses/edit/:id"
+│   ├── expenses.analysis.tsx        // Ruta "/expenses/analysis"
