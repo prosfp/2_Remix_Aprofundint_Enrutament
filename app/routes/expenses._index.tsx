@@ -1,7 +1,8 @@
-export default function AuthPage() {
+export default function ExpensesPage() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center">Auth Page</h1>
+    <div>
+      <h2>Welcome to the Expenses Dashboard</h2>
+      <p>Here you can manage and analyze your expenses.</p>
     </div>
   );
 }
