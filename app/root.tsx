@@ -8,6 +8,7 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+import MainHeader from "./components/navigation/MainHeader";
 
 export const links: LinksFunction = () => {
   return [
@@ -36,7 +37,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="min-h-screen bg-gradient-to-r from-indigo-500 to-indigo-900">
+        <MainHeader />
         {children}
         <ScrollRestoration />
         <Scripts />

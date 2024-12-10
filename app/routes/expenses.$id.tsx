@@ -1,7 +1,18 @@
-export default function ExpensesIdPage() {
+import Modal from "../components/util/Modal";
+import ExpenseForm from "../components/expenses/ExpenseForm";
+import { useNavigate } from "@remix-run/react";
+
+export default function ExpensesAddPage() {
+  const navigate = useNavigate();
+
+  function closeHandler() {
+    // No volem navegar amb Link en aquest cas ("navigate programmatically")No fem servir Link perquè
+    navigate("..");
+  }
+
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center">Expenses ID Page</h1>
-    </div>
+    <Modal onClose={closeHandler}>
+      <ExpenseForm />
+    </Modal>
   );
 }

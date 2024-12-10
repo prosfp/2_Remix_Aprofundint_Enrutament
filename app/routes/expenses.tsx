@@ -1,16 +1,30 @@
 // /expenses -> Shared Layout
 
+const DUMMY_EXPENSES = [
+  {
+    id: "e1",
+    title: "First Expense",
+    amount: 12.99,
+    date: new Date().toISOString(),
+  },
+  {
+    id: "e2",
+    title: "Second Expense",
+    amount: 16.99,
+    date: new Date().toISOString(),
+  },
+];
+
 import { Outlet } from "@remix-run/react";
+import ExpensesList from "../components/expenses/ExpensesList";
 
 export default function ExpensesLayout() {
   return (
-    <div className="bg-gradient-to-r from-indigo-500 to-indigo-900 min-h-screen">
-      <header className="bg-indigo-700 text-white p-4 shadow-lg">
-        <h1 className="text-3xl font-bold">Expenses Dashboard</h1>
-      </header>
-      <main className="container mx-auto mt-4">
-        <Outlet />
+    <>
+      <Outlet />
+      <main>
+        <ExpensesList expenses={DUMMY_EXPENSES} />
       </main>
-    </div>
+    </>
   );
 }
